@@ -1,0 +1,13 @@
+[1mdiff --git a/app/Http/Controllers/admin/ContactController.php b/app/Http/Controllers/admin/ContactController.php[m
+[1mindex 4e627ae..4811387 100644[m
+[1m--- a/app/Http/Controllers/admin/ContactController.php[m
+[1m+++ b/app/Http/Controllers/admin/ContactController.php[m
+[36m@@ -7,5 +7,7 @@[m
+ [m
+ class ContactController extends Controller[m
+ {[m
+[31m-    //[m
+[32m+[m[32m    public function index(){[m
+[32m+[m
+[32m+[m[32m    }[m
+ }[m
