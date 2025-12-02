@@ -19,6 +19,8 @@ Route::middleware(['admin.loggedin'])->group(function(){
     Route::post('/admin/login', [AdminController::class, 'login']);
 });
 
+// Route::get('/',[AdminController::class,'index']);
+
 
 Route::middleware(['check.session'])->group(function(){
 
@@ -29,5 +31,7 @@ Route::middleware(['check.session'])->group(function(){
 
     Route::get('/admin/site_settings',[SiteSettingsController::class,'index']);
     Route::post('/admin/site_settings',[SiteSettingsController::class,'update_settings']);
+
+    Route::get('/admin/sitecontent',[SiteSettingsController::class,'site_content']);
 });
 // Route::get('/admin/logout', [Index::class, 'logout']);

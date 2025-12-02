@@ -3,7 +3,7 @@
     <meta name="description" content="{{ !empty($site_settings) ? $site_settings->site_meta_desc : '' }}">
     <meta name="keywords" content="{{ !empty($site_settings) ? $site_settings->site_meta_keyword : '' }}">
     <meta name="author" content="{{ !empty($site_settings->site_name) ? $site_settings->site_name : 'Login' }}">
-    <title>Admin - {{ $site_settings->site_name }}</title>
+    <title>Admin - {{ !empty($site_settings) && $site_settings->site_name }}</title>
 @endsection
 @section('page_content')
     {!! breadcrumb('Website Pages') !!}

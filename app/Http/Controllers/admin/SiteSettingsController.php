@@ -106,5 +106,9 @@ class SiteSettingsController extends Controller
         return view('admin.site_settings',['site_settings',$site]);
     }
 
+    public function site_content(Request $req){
+        return view('admin.sitecontent');
+    }
+
 
 }
