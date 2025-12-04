@@ -7,6 +7,7 @@ use App\Http\Controllers\admin\SiteSettingsController;
 use App\Http\Controllers\admin\Pages;
 use App\Http\Controllers\admin\BannerImagesController;
 use App\Http\Controllers\admin\CategoriesController;
+use App\Http\Controllers\admin\TestimonialsController;
 
 
 // Route::get('/', function () {
@@ -48,5 +49,10 @@ Route::middleware(['check.session'])->group(function(){
     Route::match(['GET','POST'],'admin/categories/add', [CategoriesController::class,'add_category']);
     Route::match(['GET','POST'],'admin/categories/edit/{id}', [CategoriesController::class,'edit_category']);
     Route::match(['GET','POST'],'admin/categories/delete/{id}', [CategoriesController::class,'delete_category']);
+
+    Route::get('admin/testimonials/index',[TestimonialsController::class,'index']);
+    Route::match(['GET','POST'],'admin/testimonials/add', [TestimonialsController::class,'add_testimonials']);
+    Route::match(['GET','POST'],'admin/testimonials/edit/{id}', [TestimonialsController::class,'edit_testimonials']);
+    Route::match(['GET','POST'],'admin/testimonials/delete/{id}', [TestimonialsController::class,'delete_testimonials']);
 });
 // Route::get('/admin/logout', [Index::class, 'logout']);

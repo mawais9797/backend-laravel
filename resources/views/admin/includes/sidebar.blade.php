@@ -87,15 +87,15 @@
                     <a class="sidebar-link {{ $admin_page == 'categories' ? 'active' : '' }}"
                         href="{{ url('admin/categories/index') }}" aria-expanded="false">
                         <iconify-icon icon="carbon:category"></iconify-icon>
-                        <span class="hide-menu">Categories CRUD</span>
+                        <span class="hide-menu">Categories</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link {{ $admin_page == 'gallery' ? 'active' : '' }}"
-                        href="{{ url('admin/gallery') }}" aria-expanded="false">
+                    <a class="sidebar-link {{ $admin_page == 'testimonials' ? 'active' : '' }}"
+                        href="{{ url('admin/testimonials/index') }}" aria-expanded="false">
                         <iconify-icon icon="carbon:category"></iconify-icon>
-                        <span class="hide-menu">Gallery Sherwood</span>
+                        <span class="hide-menu">Testimonials</span>
                     </a>
                 </li>
 
