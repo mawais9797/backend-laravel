@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\SiteSettingsController;
 use App\Http\Controllers\admin\Pages;
 use App\Http\Controllers\admin\BannerImagesController;
+use App\Http\Controllers\admin\CategoriesController;
 
 
 // Route::get('/', function () {
@@ -42,5 +43,10 @@ Route::middleware(['check.session'])->group(function(){
     Route::match(['GET', 'POST'], '/admin/bannerimages/add',[BannerImagesController::class,'add_image']);
     Route::match(['GET', 'POST'], '/admin/bannerimages/edit/{id}',[BannerImagesController::class,'edit_image']);
     Route::match(['GET', 'POST'], '/admin/bannerimages/delete/{id}',[BannerImagesController::class,'delete_image']);
+
+    Route::get('admin/categories/index',[CategoriesController::class,'index']);
+    Route::match(['GET','POST'],'admin/categories/add', [CategoriesController::class,'add_category']);
+    Route::match(['GET','POST'],'admin/categories/edit/{id}', [CategoriesController::class,'edit_category']);
+    Route::match(['GET','POST'],'admin/categories/delete/{id}', [CategoriesController::class,'delete_category']);
 });
 // Route::get('/admin/logout', [Index::class, 'logout']);

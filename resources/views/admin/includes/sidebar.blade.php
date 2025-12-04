@@ -84,10 +84,10 @@
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link {{ $admin_page == 'sherwoodtestimonials' ? 'active' : '' }}"
-                        href="{{ url('admin/sherwoodtestimonials') }}" aria-expanded="false">
+                    <a class="sidebar-link {{ $admin_page == 'categories' ? 'active' : '' }}"
+                        href="{{ url('admin/categories/index') }}" aria-expanded="false">
                         <iconify-icon icon="carbon:category"></iconify-icon>
-                        <span class="hide-menu">Testimonials Sherwood</span>
+                        <span class="hide-menu">Categories CRUD</span>
                     </a>
                 </li>
 
