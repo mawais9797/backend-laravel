@@ -74,39 +74,12 @@
                     </a>
                 </li>
 
+
                 <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow {{ $admin_page == 'projects' || $admin_page == 'project_categories' ? 'active' : '' }}"
-                        href="javascript:void(0)" aria-expanded="false">
-                        <iconify-icon icon="mdi:briefcase-outline"></iconify-icon>
-
-                        <span class="hide-menu">Projects </span>
-                    </a>
-                    <ul aria-expanded="false"
-                        class="collapse first-level {{ $admin_page == 'projects' || $admin_page == 'project_categories' ? 'in' : '' }}">
-
-                        <li class="sidebar-item">
-                            <a class="sidebar-link {{ $admin_page == 'projects' ? 'active' : '' }}"
-                                href="{{ url('admin/projects') }}">
-                                <span class="icon-small"></span>Projects
-                            </a>
-                        </li>
-
-                        <li class="sidebar-item">
-                            <a class="sidebar-link {{ $admin_page == 'project_categories' ? 'active' : '' }}"
-                                href="{{ url('admin/project_categories') }}">
-                                <span class="icon-small"></span>Project
-                                Categories
-                            </a>
-                        </li>
-
-
-                    </ul>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link {{ $admin_page == 'events' ? 'active' : '' }}"
-                        href="{{ url('/admin/sherwoodcontroller/events') }}" aria-expanded="false">
+                    <a class="sidebar-link {{ $admin_page == 'bannerimages' ? 'active' : '' }}"
+                        href="{{ url('/admin/bannerimages/index') }}" aria-expanded="false">
                         <iconify-icon icon="carbon:category"></iconify-icon>
-                        <span class="hide-menu">Events Sherwood</span>
+                        <span class="hide-menu">Banner Images</span>
                     </a>
                 </li>
 

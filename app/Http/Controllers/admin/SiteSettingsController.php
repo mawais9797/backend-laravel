@@ -12,6 +12,7 @@ class SiteSettingsController extends Controller
         // $site_settings = null;
         // return view(' admin.site_settings', $data);
          $site = SiteSettings_model::where('id',5)->first();
+        //  pr($site);
         return view('admin.site_settings', ['site_settings' => $site]);
     }
 

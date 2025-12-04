@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\SiteSettingsController;
+use App\Http\Controllers\admin\Pages;
+use App\Http\Controllers\admin\BannerImagesController;
+
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -31,7 +34,13 @@ Route::middleware(['check.session'])->group(function(){
 
     Route::get('/admin/site_settings',[SiteSettingsController::class,'index']);
     Route::post('/admin/site_settings',[SiteSettingsController::class,'update_settings']);
-
     Route::get('/admin/sitecontent',[SiteSettingsController::class,'site_content']);
+
+    Route::match(['GET', 'POST'], '/admin/pages/home', [Pages::class,'home']);
+
+    Route::get('/admin/bannerimages/index',[BannerImagesController::class,'index']);
+    Route::match(['GET', 'POST'], '/admin/bannerimages/add',[BannerImagesController::class,'add_image']);
+    Route::match(['GET', 'POST'], '/admin/bannerimages/edit/{id}',[BannerImagesController::class,'edit_image']);
+    Route::match(['GET', 'POST'], '/admin/bannerimages/delete/{id}',[BannerImagesController::class,'delete_image']);
 });
 // Route::get('/admin/logout', [Index::class, 'logout']);
