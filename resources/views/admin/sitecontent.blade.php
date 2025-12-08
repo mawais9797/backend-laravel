@@ -41,7 +41,8 @@
                                 <td>2.2</td>
                                 <td width="65%">Become a professional</td>
                                 <td>
-                                    <a href="{{ url('admin/pages/sherwoodhome') }}" class="btn btn-primary active">Edit
+                                    <a href="{{ url('admin/pages/become-professional') }}"
+                                        class="btn btn-primary active">Edit
                                         Page</a>
                                 </td>
                             </tr>

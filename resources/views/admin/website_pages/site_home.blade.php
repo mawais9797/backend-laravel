@@ -6,7 +6,7 @@
     <title>Admin - {{ !empty($site_settings) && $site_settings->site_name }}</title>
 @endsection
 @section('page_content')
-    {!! breadcrumb('Contact Us Page') !!}
+    {!! breadcrumb('Home Page') !!}
     <form class="form theme-form" method="post" action="" enctype="multipart/form-data" id="saveForm">
         @csrf
 
