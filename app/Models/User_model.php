@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class User_model extends Model
 {
     use HasFactory;
-    protected $table='tbl_members';
+    protected $table='members';
     protected $fillable = [
-        'fname',
-        'lname',
-        'email',
-        'password',
+        'mem_fname',
+        'mem_lname',
+        'mem_email',
+        'mem_password',
         'mem_type',
         'mem_image',
         'mem_email_verified',

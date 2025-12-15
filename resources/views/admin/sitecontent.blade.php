@@ -38,7 +38,7 @@
                             </tr>
 
                             <tr>
-                                <td>2.2</td>
+                                <td>3</td>
                                 <td width="65%">Become a professional</td>
                                 <td>
                                     <a href="{{ url('admin/pages/become-professional') }}"
@@ -49,14 +49,57 @@
 
 
                             <tr>
-                                <td>7</td>
+                                <td>4</td>
                                 <td width="65%">Contact Us</td>
                                 <td>
                                     <a href="{{ url('admin/pages/contact') }}" class="btn btn-primary active">Edit
                                         Page</a>
                                 </td>
                             </tr>
+                            <tr>
+                                <td>5</td>
+                                <td width="65%">Login</td>
+                                <td>
+                                    <a href="{{ url('admin/pages/login') }}" class="btn btn-primary active">Edit
+                                        Page</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td width="65%">Register</td>
+                                <td>
+                                    <a href="{{ url('admin/pages/register') }}" class="btn btn-primary active">Edit
+                                        Page</a>
+                                </td>
+                            </tr>
 
+                            <tr>
+                                <td>7</td>
+                                <td width="65%">Trade Person Register</td>
+                                <td>
+                                    <a href="{{ url('admin/pages/trade-person-register') }}"
+                                        class="btn btn-primary active">Edit
+                                        Page</a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>8</td>
+                                <td width="65%">Privacy Policy</td>
+                                <td>
+                                    <a href="{{ url('admin/pages/privacy-policy') }}" class="btn btn-primary active">Edit
+                                        Page</a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>9</td>
+                                <td width="65%">Terms and Conditions</td>
+                                <td>
+                                    <a href="{{ url('admin/pages/terms-conditions') }}" class="btn btn-primary active">Edit
+                                        Page</a>
+                                </td>
+                            </tr>
 
 
 

@@ -21,7 +21,7 @@
                                 <p class="card-subtitle mb-4">Change your Site Logo</p>
                                 <div class="text-center">
                                     <div class="file_choose_icon">
-                                        <img src="{{ get_site_image_src('site_images', $site_settings->site_logo) }}"
+                                        <img src="{{ !empty($site_settings) ? get_site_image_src('site_images', $site_settings->site_logo) : '' }}"
                                             alt="matdash-img" class="img-fluid ">
                                     </div>
                                     <p class="mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
@@ -38,7 +38,7 @@
                                 <p class="card-subtitle mb-4">Change your Site FavIcon</p>
                                 <div class="text-center">
                                     <div class="file_choose_icon">
-                                        <img src="{{ get_site_image_src('site_images', $site_settings->site_favicon) }}"
+                                        <img src="{{ !empty($site_settings) ? get_site_image_src('site_images', $site_settings->site_favicon) : '' }}"
                                             alt="matdash-img" class="img-fluid ">
                                     </div>
                                     <p class="mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
@@ -55,7 +55,7 @@
                                 <p class="card-subtitle mb-4">Change your Site Thumb</p>
                                 <div class="text-center">
                                     <div class="file_choose_icon">
-                                        <img src="{{ get_site_image_src('site_images', $site_settings->site_thumbnail) }}"
+                                        <img src="{{ !empty($site_settings) ? get_site_image_src('site_images', $site_settings->site_thumbnail) : '' }}"
                                             alt="matdash-img" class="img-fluid ">
                                     </div>
                                     <p class="mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
@@ -322,15 +322,15 @@
                                         </div>
                                     </div>
                                     <!-- <div class="col-lg-6">
-                                                                                                                                                                                                                                                                                                                        <div class="mb-3">
-                                                                                                                                                                                                                                                                                                                            <div class="">
-                                                                                                                                                                                                                                                                                                                                <label class="form-check-label" for="color-success"> Pinterest</label>
-                                                                                                                                                                                                                                                                                                                                <input class="form-control" id="site_pinterest" type="text"
-                                                                                                                                                                                                                                                                                                                                    name="site_pinterest" placeholder="www.pinterest.com/account"
-                                                                                                                                                                                                                                                                                                                                    value="{{ !empty($site_settings) && $site_settings->site_pinterest }}">
-                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                                                    </div> -->
+                                                                                                                                                                                                                                                                                                                                                                        <div class="mb-3">
+                                                                                                                                                                                                                                                                                                                                                                            <div class="">
+                                                                                                                                                                                                                                                                                                                                                                                <label class="form-check-label" for="color-success"> Pinterest</label>
+                                                                                                                                                                                                                                                                                                                                                                                <input class="form-control" id="site_pinterest" type="text"
+                                                                                                                                                                                                                                                                                                                                                                                    name="site_pinterest" placeholder="www.pinterest.com/account"
+                                                                                                                                                                                                                                                                                                                                                                                    value="{{ !empty($site_settings) && $site_settings->site_pinterest }}">
+                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                                                                    </div> -->
                                     <div class="col-12">
                                         <div class="d-flex align-items-center justify-content-end mt-4 gap-6">
                                             <button class="btn btn-primary" type="submit">Update Site Settings</button>

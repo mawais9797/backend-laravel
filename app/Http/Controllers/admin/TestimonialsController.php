@@ -41,7 +41,7 @@ class TestimonialsController extends Controller
             $data['name'] = $input['name'];
             $data['designation'] = $input['designation'];
             $data['message'] = $input['message'];
-            pr($data);
+            // pr($data);
             $id = Testimonials_model::create($data)->id;
 
             // $this->saveServiceBlock($id, $input);

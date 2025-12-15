@@ -42,6 +42,11 @@ Route::middleware(['check.session'])->group(function(){
     Route::match(['GET', 'POST'], '/admin/pages/about', [Pages::class,'about']);
     Route::match(['GET', 'POST'],'/admin/pages/become-professional',[Pages::class,'become_professional']);
     Route::match(['GET', 'POST'],'/admin/pages/contact',[Pages::class,'contact']);
+    Route::match(['GET', 'POST'],'/admin/pages/login',[Pages::class,'login']);
+    Route::match(['GET', 'POST'],'/admin/pages/register', [Pages::class,'register']);
+    Route::match(['GET', 'POST'],'admin/pages/trade-person-register', [Pages::class,'trade_person_register']);
+    Route::match(['GET', 'POST'],'admin/pages/privacy-policy', [Pages::class,'privacy_policy']);
+    Route::match(['GET', 'POST'],'admin/pages/terms-conditions', [Pages::class,'terms_conditions']);
 
     Route::get('/admin/bannerimages/index',[BannerImagesController::class,'index']);
     Route::match(['GET', 'POST'], '/admin/bannerimages/add',[BannerImagesController::class,'add_image']);
