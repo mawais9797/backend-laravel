@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class User_model extends Model
 {
     use HasFactory;
-    protected $table='members';
+    protected $table = 'members';
     protected $fillable = [
         'mem_fname',
         'mem_lname',
@@ -20,4 +20,10 @@ class User_model extends Model
         'email_verification_code',
         'code_expiry_time',
     ];
+
+    public function professional_details()
+    {
+        return $this->hasOne(ProfessionalData_model::class, 'mem_id', 'id');
+        // return $this->belongsTo(ProfessionalData_model::class, 'mem_id', 'id');
+    }
 }

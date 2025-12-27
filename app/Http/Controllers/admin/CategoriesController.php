@@ -5,16 +5,20 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Categories_model;
+use App\helpers\JwtHelper;
 
 class CategoriesController extends Controller
 {
-    public function index(){
-        $this->data['rows'] = Categories_model::orderBy('id','ASC')->get();
+    public function index()
+    {
+        $categories['rows'] = Categories_model::orderBy('id', 'ASC')->get();
+        // $this->data['rows'] = Categories_model::orderBy('id', 'ASC')->get();
         // pr($categories);
-        return view('admin.categories.index',$this->data);
+        return view('admin.categories.index', $categories);
     }
 
-    public function add_category(Request $request){
+    public function add_category(Request $request)
+    {
         $input = $request->all();
         // pr($input);
         if ($input) {
@@ -27,17 +31,17 @@ class CategoriesController extends Controller
                     $field => 'mimes:png,jpg,jpeg,svg,gif,webp|max:40000',
                 ]);
 
-                $image = $request->file($field)->store('categories','public');
+                $image = $request->file($field)->store('categories', 'public');
 
                 if (! empty(basename($image))) {
                     $data[$field] = basename($image);
                 }
             }
 
-           if (!empty($input['status'])) {
-                 $data['status'] = 1;
+            if (!empty($input['status'])) {
+                $data['status'] = 1;
             } else {
-                 $data['status'] = 0;
+                $data['status'] = 0;
             }
             $data['cat_name'] = $input['cat_name'];
             // pr($data);
@@ -52,12 +56,12 @@ class CategoriesController extends Controller
         return view('admin.categories.index', $this->data);
     }
 
-     public function edit_category(Request $request, $id){
-
+    public function edit_category(Request $request, $id)
+    {
         $GalleryImage = Categories_model::find($id);
         $input = $request->all();
         // pr($GalleryImage);
-         if ($input) {
+        if ($input) {
             $data = [];
             // for ($i = 1; $i <= 5; $i++) {
             $field = 'image';
@@ -67,9 +71,9 @@ class CategoriesController extends Controller
                     $field => 'mimes:png,jpg,jpeg,svg,gif,webp|max:40000',
                 ]);
 
-                $image = $request->file($field)->store('categories','public');
+                $image = $request->file($field)->store('categories', 'public');
 
-                 if (! empty($image)) {
+                if (! empty($image)) {
                     // Old image delete karne ka logic
                     $oldImageField = 'image';
                     if (! empty($GalleryImage->$oldImageField)) {
@@ -99,6 +103,7 @@ class CategoriesController extends Controller
         $this->data['enable_editor'] = true;
         return view('admin.categories.index', $this->data);
     }
+
     public function delete_category($id)
     {
         $GalleryImage = Categories_model::find($id);
@@ -106,5 +111,17 @@ class CategoriesController extends Controller
         $GalleryImage->delete();
         return redirect('admin/categories/index')
             ->with('error', 'Content deleted Successfully');
+    }
+
+    public function fetch_categories(Request $request)
+    {
+        $input = $request->all();
+        // pr($input);
+        $res = [];
+        $categories = Categories_model::where('status', 1)->get();
+        // pr($categories);
+        $res['categories'] = $categories;
+        // pr($res);
+        return json_encode($res);
     }
 }

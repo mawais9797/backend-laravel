@@ -7,7 +7,9 @@ use App\Http\Controllers\admin\SiteSettingsController;
 use App\Http\Controllers\admin\Pages;
 use App\Http\Controllers\admin\BannerImagesController;
 use App\Http\Controllers\admin\CategoriesController;
+use App\Http\Controllers\admin\SubCategoriesController;
 use App\Http\Controllers\admin\TestimonialsController;
+use App\Http\Controllers\admin\PlansController;
 
 
 // Route::get('/', function () {
@@ -58,9 +60,20 @@ Route::middleware(['check.session'])->group(function(){
     Route::match(['GET','POST'],'admin/categories/edit/{id}', [CategoriesController::class,'edit_category']);
     Route::match(['GET','POST'],'admin/categories/delete/{id}', [CategoriesController::class,'delete_category']);
 
+    Route::match(['GET','POST'], 'admin/sub-categories/index',[SubCategoriesController::class, 'index']);
+    Route::match(['GET','POST'], 'admin/sub-categories/add',[SubCategoriesController::class, 'add_sub_category']);
+    Route::match(['GET','POST'], 'admin/sub-categories/edit/{id}',[SubCategoriesController::class, 'edit_sub_category']);
+
+    Route::match(['GET','POST'], 'admin/sub-categories/delete/{id}',[SubCategoriesController::class, 'delete_sub_category']);
+
     Route::get('admin/testimonials/index',[TestimonialsController::class,'index']);
     Route::match(['GET','POST'],'admin/testimonials/add', [TestimonialsController::class,'add_testimonials']);
     Route::match(['GET','POST'],'admin/testimonials/edit/{id}', [TestimonialsController::class,'edit_testimonials']);
     Route::match(['GET','POST'],'admin/testimonials/delete/{id}', [TestimonialsController::class,'delete_testimonials']);
+
+    Route::get('admin/plans/index', [PlansController::class, 'index']);
+    Route::match(['GET','POST'],'admin/plans/add', [PlansController::class,'add_plan']);
+    Route::match(['GET','POST'],'admin/plans/edit/{id}', [PlansController::class,'edit_plan']);
+    Route::match(['GET','POST'],'admin/plans/delete/{id}', [PlansController::class,'delete_plan']);
 });
 // Route::get('/admin/logout', [Index::class, 'logout']);

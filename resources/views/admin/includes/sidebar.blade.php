@@ -92,6 +92,21 @@
                 </li>
 
                 <li class="sidebar-item">
+                    <a class="sidebar-link {{ $admin_page == 'sub-categories' ? 'active' : '' }}"
+                        href="{{ url('admin/sub-categories/index') }}" aria-expanded="false">
+                        <iconify-icon icon="carbon:category"></iconify-icon>
+                        <span class="hide-menu">Sub-Categories</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link {{ $admin_page == 'plans' ? 'active' : '' }}"
+                        href="{{ url('admin/plans/index') }}" aria-expanded="false">
+                        <iconify-icon icon="carbon:category"></iconify-icon>
+                        <span class="hide-menu">Plans</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
                     <a class="sidebar-link {{ $admin_page == 'testimonials' ? 'active' : '' }}"
                         href="{{ url('admin/testimonials/index') }}" aria-expanded="false">
                         <iconify-icon icon="carbon:category"></iconify-icon>
