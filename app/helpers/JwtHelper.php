@@ -7,7 +7,7 @@ use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use Illuminate\Support\Facades\DB;
 use App\Models\Token_model;
-use App\Models\Users_model;
+use App\Models\User_model;
 use Exception;
 
 class JwtHelper
@@ -66,18 +66,20 @@ class JwtHelper
                 return ['status' => false, 'message' => 'Token has expired'];
             }
 
+            // pr($decoded);
             // Check if member exists and is active
             // $memData = Member_model::where('id', $decoded->mid)
-            $memData = Users_model::where('id', $decoded->mid)
-                ->where('email', $decoded->mee)
+            $memData = User_model::where('id', $decoded->mid)
+                ->where('mem_email', $decoded->mee)
                 ->exists();
 
+            // pr($memData);
             if (!$memData) {
                 return ['status' => false, 'message' => 'Invalid member ID or account inactive'];
             }
 
             // Check if token exists in database
-            $tokenExists = Token_Sherwood_model::where('token', $token)
+            $tokenExists = Token_model::where('token', $token)
                 ->where('mem_id', $decoded->mid)
                 ->exists();
 

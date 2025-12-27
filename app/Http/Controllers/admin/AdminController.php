@@ -4,10 +4,14 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Admin_model;
+use App\Models\Admin;
 
 class AdminController extends Controller
 {
+    public function index(){
+
+        return view('admin.login');
+    }
 
     public function admin_register(Request $request){
         // print_r('hello');
@@ -33,7 +37,7 @@ class AdminController extends Controller
             $data['mem_type'] = 'admin';
 
             // pr($data);
-            $user = Admin_model::create($data);
+            $user = Admin::create($data);
             // pr($user);
             // $userToken = JwtHelper::generateAuthToken($user->id, $user->email,$user->mem_type);
 
@@ -66,7 +70,7 @@ class AdminController extends Controller
         // pr($input);
         $res = [];
         if($input){
-            $user = Admin_model::where('email',$input['email'])->where('password',md5($input['password']))->first();
+            $user = Admin::where('email',$input['email'])->where('password',md5($input['password']))->first();
             if($user){
                 $request->session()->put('admin_id',$user->id);
                 $request->session()->put('admin_email',$user->email);
@@ -106,7 +110,7 @@ class AdminController extends Controller
         // pr($input);
         if($input['current_password']){
             $admin_id = $request->session()->get('admin_id');
-            $admin = Admin_model::where('id',$admin_id)->first();
+            $admin = Admin::where('id',$admin_id)->first();
             if($admin->mem_type == 'admin'){
                 $old_password = $admin->password;
                 $current_password = md5($input['current_password']);

@@ -74,55 +74,43 @@
                     </a>
                 </li>
 
+
                 <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow {{ $admin_page == 'projects' || $admin_page == 'project_categories' ? 'active' : '' }}"
-                        href="javascript:void(0)" aria-expanded="false">
-                        <iconify-icon icon="mdi:briefcase-outline"></iconify-icon>
-
-                        <span class="hide-menu">Projects </span>
-                    </a>
-                    <ul aria-expanded="false"
-                        class="collapse first-level {{ $admin_page == 'projects' || $admin_page == 'project_categories' ? 'in' : '' }}">
-
-                        <li class="sidebar-item">
-                            <a class="sidebar-link {{ $admin_page == 'projects' ? 'active' : '' }}"
-                                href="{{ url('admin/projects') }}">
-                                <span class="icon-small"></span>Projects
-                            </a>
-                        </li>
-
-                        <li class="sidebar-item">
-                            <a class="sidebar-link {{ $admin_page == 'project_categories' ? 'active' : '' }}"
-                                href="{{ url('admin/project_categories') }}">
-                                <span class="icon-small"></span>Project
-                                Categories
-                            </a>
-                        </li>
-
-
-                    </ul>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link {{ $admin_page == 'events' ? 'active' : '' }}"
-                        href="{{ url('/admin/sherwoodcontroller/events') }}" aria-expanded="false">
+                    <a class="sidebar-link {{ $admin_page == 'bannerimages' ? 'active' : '' }}"
+                        href="{{ url('/admin/bannerimages/index') }}" aria-expanded="false">
                         <iconify-icon icon="carbon:category"></iconify-icon>
-                        <span class="hide-menu">Events Sherwood</span>
+                        <span class="hide-menu">Banner Images</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link {{ $admin_page == 'sherwoodtestimonials' ? 'active' : '' }}"
-                        href="{{ url('admin/sherwoodtestimonials') }}" aria-expanded="false">
+                    <a class="sidebar-link {{ $admin_page == 'categories' ? 'active' : '' }}"
+                        href="{{ url('admin/categories/index') }}" aria-expanded="false">
                         <iconify-icon icon="carbon:category"></iconify-icon>
-                        <span class="hide-menu">Testimonials Sherwood</span>
+                        <span class="hide-menu">Categories</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link {{ $admin_page == 'gallery' ? 'active' : '' }}"
-                        href="{{ url('admin/gallery') }}" aria-expanded="false">
+                    <a class="sidebar-link {{ $admin_page == 'sub-categories' ? 'active' : '' }}"
+                        href="{{ url('admin/sub-categories/index') }}" aria-expanded="false">
                         <iconify-icon icon="carbon:category"></iconify-icon>
-                        <span class="hide-menu">Gallery Sherwood</span>
+                        <span class="hide-menu">Sub-Categories</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link {{ $admin_page == 'plans' ? 'active' : '' }}"
+                        href="{{ url('admin/plans/index') }}" aria-expanded="false">
+                        <iconify-icon icon="carbon:category"></iconify-icon>
+                        <span class="hide-menu">Plans</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link {{ $admin_page == 'testimonials' ? 'active' : '' }}"
+                        href="{{ url('admin/testimonials/index') }}" aria-expanded="false">
+                        <iconify-icon icon="carbon:category"></iconify-icon>
+                        <span class="hide-menu">Testimonials</span>
                     </a>
                 </li>
 

@@ -8,16 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 class User_model extends Model
 {
     use HasFactory;
-    protected $table='tbl_members';
+    protected $table = 'members';
     protected $fillable = [
-        'fname',
-        'lname',
-        'email',
-        'password',
+        'mem_fname',
+        'mem_lname',
+        'mem_email',
+        'mem_password',
         'mem_type',
         'mem_image',
         'mem_email_verified',
         'email_verification_code',
         'code_expiry_time',
     ];
+
+    public function professional_details()
+    {
+        return $this->hasOne(ProfessionalData_model::class, 'mem_id', 'id');
+        // return $this->belongsTo(ProfessionalData_model::class, 'mem_id', 'id');
+    }
 }

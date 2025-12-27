@@ -9,8 +9,8 @@ class ContactController extends Controller
 {
     public function index(){
 
-        return json_encode('hello');
+        // return json_encode('hello');
 
-        return view('admin.dashboard');
+        // return view('admin.dashboard');
     }
 }

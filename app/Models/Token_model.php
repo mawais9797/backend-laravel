@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Token_model extends Model
 {
     use HasFactory;
-    protected $table='tbl_tokens';
+    protected $table='tokens';
     protected $fillable = [
         'mem_id',
         'mem_type',
